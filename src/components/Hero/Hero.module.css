@@ -1,0 +1,295 @@
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('../../assets/hero-bg.jpg') center/cover no-repeat;
+  text-align: center;
+  padding: 0 1.5rem;
+  overflow: hidden;
+  min-height: 600px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: 100%;
+  padding-top: 2rem; /* Espacio para navbar fijo */
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(57, 255, 20, 0.1);
+  border: 1px solid var(--color-acento);
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.badge span {
+  color: var(--color-acento);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* TÍTULO OPTIMIZADO - Tamaño profesional */
+.tituloHero {
+  font-size: 2.8rem; /* Reducido de 3.5rem */
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--color-texto);
+  line-height: 1.2;
+}
+
+.highlight {
+  color: var(--color-acento);
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: rgba(57, 255, 20, 0.3);
+  z-index: -1;
+}
+
+.animatedText {
+  font-size: 1.5rem; /* Reducido de 1.8rem */
+  margin-bottom: 1.5rem;
+  color: var(--color-texto);
+  min-height: 50px;
+}
+
+.wordCycle {
+  color: var(--color-acento);
+  font-weight: 700;
+  display: inline-block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.subtituloHero {
+  font-size: 1.2rem; /* Reducido de 1.25rem */
+  margin-bottom: 2.5rem;
+  color: var(--color-texto-secundario);
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaContainer {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: var(--color-acento);
+  color: var(--color-fondo);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.ctaPrimary:hover {
+  background: #2ED10A;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(57, 255, 20, 0.3);
+}
+
+.ctaSecondary {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: var(--color-texto);
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid var(--color-acento);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.ctaSecondary:hover {
+  background: var(--color-acento);
+  color: var(--color-fondo);
+  transform: translateY(-3px);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--color-acento);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stat span {
+  color: var(--color-texto-secundario);
+  font-size: 0.9rem;
+}
+
+/* ========== RESPONSIVIDAD HERO OPTIMIZADA ========== */
+
+/* Tablets grandes */
+@media screen and (max-width: 1024px) {
+  .hero {
+    min-height: 650px;
+  }
+  
+  .tituloHero {
+    font-size: 2.4rem;
+  }
+  
+  .animatedText {
+    font-size: 1.3rem;
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+  .tituloHero {
+    font-size: 2.1rem;
+  }
+  
+  .animatedText {
+    font-size: 1.2rem;
+    min-height: 45px;
+  }
+  
+  .subtituloHero {
+    font-size: 1.1rem;
+  }
+  
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .stat strong {
+    font-size: 1.6rem;
+  }
+}
+
+/* Móviles grandes */
+@media screen and (max-width: 480px) {
+  .hero {
+    padding: 0 1rem;
+    min-height: 550px;
+  }
+  
+  .badge {
+    padding: 0.4rem 1rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .badge span {
+    font-size: 0.8rem;
+  }
+  
+  .tituloHero {
+    font-size: 1.8rem;
+  }
+  
+  .animatedText {
+    font-size: 1rem;
+    min-height: 40px;
+  }
+  
+  .ctaContainer {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2.5rem;
+  }
+  
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Móviles muy pequeños */
+@media screen and (max-width: 320px) {
+  .tituloHero {
+    font-size: 1.6rem;
+  }
+  
+  .animatedText {
+    font-size: 0.9rem;
+  }
+}
+
+/* Orientación horizontal */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    padding: 3rem 0;
+  }
+  
+  .heroContent {
+    padding-top: 1rem;
+  }
+  
+  .tituloHero {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .animatedText {
+    font-size: 1.1rem;
+    min-height: 35px;
+    margin-bottom: 1rem;
+  }
+  
+  .subtituloHero {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .stats {
+    display: none;
+  }
+}

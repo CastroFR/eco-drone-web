@@ -1,0 +1,103 @@
+.opportunity {
+  padding: 5rem 0;
+  background: var(--color-fondo);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--color-acento);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat {
+  padding: 2rem;
+}
+
+.numero {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-acento);
+  margin-bottom: 1rem;
+}
+
+.subtexto {
+  color: var(--color-texto-secundario);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* ========== RESPONSIVIDAD OPPORTUNITY ========== */
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+  .opportunity {
+    padding: 3rem 0;
+  }
+  
+  .titulo {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .numero {
+    font-size: 2.5rem;
+  }
+}
+
+/* Móviles */
+@media screen and (max-width: 480px) {
+  .stat {
+    padding: 1.5rem;
+  }
+  
+  .numero {
+    font-size: 2.2rem;
+  }
+  
+  .subtexto {
+    font-size: 1rem;
+  }
+}
+
+/* Móviles muy pequeños */
+@media screen and (max-width: 320px) {
+  .opportunity {
+    padding: 2rem 0;
+  }
+  
+  .titulo {
+    font-size: 1.8rem;
+  }
+  
+  .stat {
+    padding: 1rem;
+  }
+  
+  .numero {
+    font-size: 2rem;
+  }
+  
+  .subtexto {
+    font-size: 0.9rem;
+  }
+}

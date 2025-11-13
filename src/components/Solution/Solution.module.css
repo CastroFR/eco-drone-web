@@ -1,0 +1,60 @@
+.solution {
+  padding: 6rem 0;
+  background: var(--color-fondo);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  color: var(--color-acento);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* ========== RESPONSIVIDAD SOLUTION ========== */
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+  .solution {
+    padding: 4rem 0;
+  }
+  
+  .titulo {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Móviles */
+@media screen and (max-width: 480px) {
+  .solution {
+    padding: 3rem 0;
+  }
+  
+  .titulo {
+    font-size: 2rem;
+  }
+}
+
+/* Móviles muy pequeños */
+@media screen and (max-width: 320px) {
+  .titulo {
+    font-size: 1.8rem;
+  }
+}

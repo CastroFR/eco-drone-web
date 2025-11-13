@@ -1,0 +1,156 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  background: transparent;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.scrolled {
+  background: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-acento);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navLinks a {
+  color: var(--color-texto);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navLinks a:hover {
+  color: var(--color-acento);
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-acento);
+  transition: width 0.3s ease;
+}
+
+.navLinks a:hover::after {
+  width: 100%;
+}
+
+.navLinks a.active {
+  color: var(--color-acento);
+}
+
+.navLinks a.active::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background: var(--color-texto);
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+.toggle .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* ========== RESPONSIVIDAD NAVBAR ========== */
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: var(--color-fondo);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 2rem;
+    transition: right 0.3s ease;
+    gap: 1.5rem;
+  }
+
+  .navActive {
+    right: 0;
+  }
+
+  .navLinks a {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+  }
+}
+
+/* Móviles */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .logo a {
+    font-size: 1.3rem;
+  }
+}
+
+/* Móviles muy pequeños */
+@media screen and (max-width: 320px) {
+  .logo a {
+    font-size: 1.2rem;
+  }
+  
+  .navLinks a {
+    font-size: 1rem;
+    padding: 0.7rem 0.8rem;
+  }
+}

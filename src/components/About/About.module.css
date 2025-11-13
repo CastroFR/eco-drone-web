@@ -1,0 +1,74 @@
+.about {
+  padding: 5rem 0;
+  background: var(--color-fondo);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--color-acento);
+}
+
+.contenido {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.descripcion {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-texto-secundario);
+  text-align: center;
+}
+
+/* ========== RESPONSIVIDAD ABOUT ========== */
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 3rem 0;
+  }
+  
+  .titulo {
+    font-size: 2rem;
+  }
+  
+  .descripcion {
+    font-size: 1rem;
+    text-align: left;
+  }
+}
+
+/* Móviles */
+@media screen and (max-width: 480px) {
+  .about {
+    padding: 2rem 0;
+  }
+  
+  .titulo {
+    font-size: 1.8rem;
+  }
+  
+  .descripcion {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+/* Móviles muy pequeños */
+@media screen and (max-width: 320px) {
+  .titulo {
+    font-size: 1.6rem;
+  }
+  
+  .descripcion {
+    font-size: 0.9rem;
+  }
+}

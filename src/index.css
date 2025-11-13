@@ -1,68 +1,146 @@
+/* Variables CSS globales */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --color-fondo: #121212;
+  --color-texto: #FFFFFF;
+  --color-texto-secundario: #A0A0A0;
+  --color-acento: #39FF14;
+  --color-card: #1E1E1E;
+  --color-borde: #333333;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+/* Reseteos y configuraciones globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-a:hover {
-  color: #535bf2;
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px; /* Base para desktop */
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* ========== BREAKPOINTS ESPECÍFICOS ========== */
+
+/* Tablets grandes (iPad Pro, Surface Pro 7) */
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* Tablets medianas (iPad Air, iPad Mini) */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14.5px;
+  }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Tablets pequeñas y móviles grandes */
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 14px;
   }
-  a:hover {
-    color: #747bff;
+}
+
+/* Móviles grandes (iPhone 14 Pro Max, Galaxy S20 Ultra) */
+@media screen and (max-width: 430px) {
+  html {
+    font-size: 13.5px;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+/* Móviles medianos (iPhone 12 Pro, iPhone XR) */
+@media screen and (max-width: 390px) {
+  html {
+    font-size: 13px;
   }
+}
+
+/* Móviles pequeños (iPhone SE, Galaxy A51/71) */
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 12.5px;
+  }
+}
+
+/* Dispositivos muy pequeños */
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+/* Optimizaciones para orientación horizontal */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 4rem 0;
+  }
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-fondo);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-acento);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2ED10A;
+}
+
+/* Smooth scrolling para toda la página */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mejorar rendimiento de animaciones */
+* {
+  transform: translateZ(0);
+}
+
+
+/* Agrega esto al final de tu index.css existente */
+
+/* Asegurar que las secciones tengan espacio para el navbar fijo */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Mejorar el scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Asegurar que el contenido no quede detrás del navbar */
+#nosotros,
+#problema, 
+#solucion,
+#viabilidad,
+#contacto {
+  padding-top: 80px;
+  margin-top: -80px;
+}
+
+/* Solo para la sección de inicio (hero) */
+#inicio {
+  padding-top: 0;
+  margin-top: 0;
 }

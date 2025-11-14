@@ -16,7 +16,7 @@ const Opportunity = () => {
             <p className={styles.subtexto}>Disposición a adoptar la tecnología</p>
           </div>
           <div className={styles.stat}>
-            <span className={styles.numero}>$25 / Manzana</span>
+            <span className={styles.numero}>$120 / Hectárea</span>
             <p className={styles.subtexto}>Nuestro precio de servicio competitivo</p>
           </div>
         </div>

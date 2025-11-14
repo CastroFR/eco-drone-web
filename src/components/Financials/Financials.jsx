@@ -7,13 +7,13 @@ const Financials = () => {
       <div className={styles.container}>
         <h2 className={styles.titulo}>Resultados que Hablan por Sí Solos</h2>
         <p className={styles.subtitulo}>
-          Miles de manzanas cultivadas con éxito en Chalatenango
+          Miles de hectáreas cultivadas con éxito en Chalatenango
         </p>
         
         <div className={styles.kpis}>
           <div className={styles.kpi} data-aos="fade-up">
             <span className={styles.numero}>+500</span>
-            <p className={styles.subtexto}>Manzanas Servidas</p>
+            <p className={styles.subtexto}>Hectáreas Servidas</p>
             <div className={styles.kpiBar}>
               <div className={styles.kpiFill} style={{width: '100%'}}></div>
             </div>
@@ -39,7 +39,7 @@ const Financials = () => {
           <div className={styles.testimonioGrid}>
             <div className={styles.testimonio} data-aos="fade-right">
               <div className={styles.quote}>"</div>
-              <p>Eco Drone revolucionó mi cultivo de maíz. De 40 quintales pasé a 65 por manzana con menos gastos."</p>
+              <p>Eco Drone revolucionó mi cultivo de maíz. De 40 quintales pasé a 65 por hectárea con menos gastos."</p>
               <div className={styles.cliente}>
                 <strong>Don Miguel Hernández</strong>
                 <span>Productor de Maíz, La Palma</span>

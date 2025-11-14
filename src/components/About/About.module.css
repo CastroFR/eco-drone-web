@@ -1,19 +1,27 @@
 .about {
-  padding: 5rem 0;
+  padding: 80px 0 6rem 0;
   background: var(--color-fondo);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  margin-top: 0;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  width: 100%;
 }
 
 .titulo {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 2rem;
   color: var(--color-acento);
+  font-weight: 700;
 }
 
 .contenido {
@@ -22,7 +30,7 @@
 }
 
 .descripcion {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   color: var(--color-texto-secundario);
   text-align: center;
@@ -30,26 +38,26 @@
 
 /* ========== RESPONSIVIDAD ABOUT ========== */
 
-/* Tablets */
 @media screen and (max-width: 768px) {
   .about {
-    padding: 3rem 0;
+    padding: 4rem 0;
+    min-height: auto;
+    display: block; /* En móvil, quitar centrado */
   }
   
   .titulo {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   
   .descripcion {
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: left;
   }
 }
 
-/* Móviles */
 @media screen and (max-width: 480px) {
   .about {
-    padding: 2rem 0;
+    padding: 3rem 0;
   }
   
   .titulo {
@@ -57,18 +65,6 @@
   }
   
   .descripcion {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-}
-
-/* Móviles muy pequeños */
-@media screen and (max-width: 320px) {
-  .titulo {
-    font-size: 1.6rem;
-  }
-  
-  .descripcion {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }

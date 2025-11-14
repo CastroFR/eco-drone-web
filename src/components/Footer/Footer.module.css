@@ -1,7 +1,9 @@
 .footer {
   background: var(--color-card);
-  padding: 4rem 0 2rem;
+  padding: 80px 0 2rem;
   border-top: 1px solid var(--color-borde);
+  width: 100%;
+  margin: 0;
 }
 
 .container {
@@ -23,9 +25,10 @@
 
 .formTitle {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
   color: var(--color-acento);
+  font-weight: 700;
 }
 
 .form {
@@ -41,59 +44,68 @@
 
 .input,
 .textarea {
-  padding: 0.75rem 1rem;
+  padding: 1rem 1.2rem;
   background: var(--color-fondo);
   border: 1px solid var(--color-borde);
-  border-radius: 4px;
+  border-radius: 8px;
   color: var(--color-texto);
   font-size: 1rem;
   transition: all 0.3s ease;
+  font-family: inherit;
 }
 
 .input:focus,
 .textarea:focus {
   outline: none;
   border-color: var(--color-acento);
-  box-shadow: 0 0 0 2px rgba(57, 255, 20, 0.1);
+  box-shadow: 0 0 0 3px rgba(57, 255, 20, 0.1);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--color-texto-secundario);
 }
 
 .textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 140px;
+  line-height: 1.5;
 }
 
 .submitButton {
-  padding: 0.75rem 2rem;
+  padding: 1rem 2rem;
   background: var(--color-acento);
   color: var(--color-fondo);
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
 .submitButton:hover {
   background: #2ED10A;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(57, 255, 20, 0.3);
+  box-shadow: 0 8px 20px rgba(57, 255, 20, 0.3);
 }
 
 .copyright {
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 2.5rem;
   border-top: 1px solid var(--color-borde);
   color: var(--color-texto-secundario);
+  font-size: 0.9rem;
 }
 
 /* ========== RESPONSIVIDAD FOOTER ========== */
 
-/* Tablets */
 @media screen and (max-width: 768px) {
   .footer {
-    padding: 3rem 0 1.5rem;
+    padding: 4rem 0 1.5rem;
   }
   
   .content {
@@ -101,56 +113,46 @@
   }
   
   .formTitle {
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
   }
   
   .form {
-    gap: 1rem;
+    gap: 1.2rem;
   }
 }
 
-/* Móviles */
 @media screen and (max-width: 480px) {
   .footer {
-    padding: 2rem 0 1rem;
+    padding: 3rem 0 1rem;
   }
   
   .formTitle {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   
   .input, .textarea {
-    padding: 0.7rem;
-    font-size: 0.9rem;
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
   }
   
   .submitButton {
-    padding: 0.7rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
   }
 }
 
-/* Móviles muy pequeños */
 @media screen and (max-width: 320px) {
   .footer {
-    padding: 1.5rem 0 1rem;
-  }
-  
-  .container {
-    padding: 0 1rem;
+    padding: 2.5rem 0 1rem;
   }
   
   .formTitle {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
   
   .input, .textarea {
-    padding: 0.6rem;
-    font-size: 0.85rem;
-  }
-  
-  .copyright {
+    padding: 0.8rem;
     font-size: 0.9rem;
   }
 }

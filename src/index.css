@@ -6,6 +6,7 @@
   --color-acento: #39FF14;
   --color-card: #1E1E1E;
   --color-borde: #333333;
+  --navbar-height: 80px;
 }
 
 /* Reseteos y configuraciones globales */
@@ -26,6 +27,10 @@ body {
   color: var(--color-texto);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  padding-top: var(--navbar-height);
 }
 
 /* ========== BREAKPOINTS ESPECÍFICOS ========== */
@@ -98,49 +103,17 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-acento);
+  background: linear-gradient(180deg, var(--color-acento), #2ED10A);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2ED10A;
+  background: linear-gradient(180deg, #2ED10A, var(--color-acento));
 }
 
-/* Smooth scrolling para toda la página */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Mejorar rendimiento de animaciones */
+/* Mejoras de performance */
 * {
   transform: translateZ(0);
-}
-
-
-/* Agrega esto al final de tu index.css existente */
-
-/* Asegurar que las secciones tengan espacio para el navbar fijo */
-section {
-  scroll-margin-top: 80px;
-}
-
-/* Mejorar el scroll suave */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Asegurar que el contenido no quede detrás del navbar */
-#nosotros,
-#problema, 
-#solucion,
-#viabilidad,
-#contacto {
-  padding-top: 80px;
-  margin-top: -80px;
-}
-
-/* Solo para la sección de inicio (hero) */
-#inicio {
-  padding-top: 0;
-  margin-top: 0;
+  backface-visibility: hidden;
+  perspective: 1000px;
 }

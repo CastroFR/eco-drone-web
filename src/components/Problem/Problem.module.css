@@ -1,12 +1,18 @@
 .ventajas {
-  padding: 6rem 0;
+  padding: 80px 0 6rem 0;
   background: #1a1a1a;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  width: 100%;
 }
 
 .titulo {
@@ -14,6 +20,7 @@
   font-size: 2.8rem;
   margin-bottom: 1rem;
   color: var(--color-acento);
+  font-weight: 700;
 }
 
 .subtitulo {
@@ -24,6 +31,7 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
 }
 
 .grid {
@@ -38,6 +46,7 @@
   border-radius: 15px;
   padding: 3rem;
   border: 1px solid var(--color-borde);
+  margin-top: 2rem;
 }
 
 .comparison h3 {
@@ -45,6 +54,7 @@
   font-size: 2rem;
   margin-bottom: 3rem;
   color: var(--color-texto);
+  font-weight: 600;
 }
 
 .comparisonGrid {
@@ -62,6 +72,7 @@
   font-size: 1.5rem;
   margin-bottom: 2rem;
   color: var(--color-texto);
+  font-weight: 600;
 }
 
 .method ul {
@@ -73,6 +84,7 @@
   padding: 0.8rem 0;
   color: var(--color-texto-secundario);
   border-bottom: 1px solid var(--color-borde);
+  line-height: 1.5;
 }
 
 .vs {
@@ -89,12 +101,20 @@
   margin-top: 2rem;
 }
 
-/* ========== RESPONSIVIDAD VENTAJAS ========== */
+/* ========== RESPONSIVIDAD PROBLEM ========== */
 
-/* Tablets */
+@media screen and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .ventajas {
-    padding: 4rem 0;
+    padding: 5rem 0;
+    min-height: auto;
+    display: block;
   }
   
   .titulo {
@@ -114,6 +134,7 @@
   
   .comparison {
     padding: 2rem 1.5rem;
+    margin-top: 1rem;
   }
   
   .comparisonGrid {
@@ -127,42 +148,25 @@
   }
 }
 
-/* Móviles */
 @media screen and (max-width: 480px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .comparison h3 {
-    font-size: 1.8rem;
-  }
-  
-  .method h4 {
-    font-size: 1.3rem;
-  }
-  
-  .vs {
-    width: 60px;
-    height: 60px;
-    font-size: 1.2rem;
-  }
-}
-
-/* Móviles muy pequeños */
-@media screen and (max-width: 320px) {
   .ventajas {
-    padding: 3rem 0;
+    padding: 4rem 0;
   }
   
   .titulo {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .comparison {
     padding: 1.5rem 1rem;
   }
   
-  .method li {
-    font-size: 0.9rem;
+  .comparison h3 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  
+  .method h4 {
+    font-size: 1.3rem;
   }
 }

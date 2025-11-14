@@ -1,12 +1,18 @@
 .resultados {
-  padding: 6rem 0;
+  padding: 80px 0 6rem 0;
   background: #1a1a1a;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  width: 100%;
 }
 
 .titulo {
@@ -14,6 +20,7 @@
   font-size: 2.8rem;
   margin-bottom: 1rem;
   color: var(--color-acento);
+  font-weight: 700;
 }
 
 .subtitulo {
@@ -24,11 +31,12 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
 }
 
 .kpis {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2.5rem;
   margin-bottom: 5rem;
 }
@@ -45,6 +53,7 @@
 .kpi:hover {
   transform: translateY(-5px);
   border-color: var(--color-acento);
+  box-shadow: 0 15px 40px rgba(57, 255, 20, 0.15);
 }
 
 .numero {
@@ -59,7 +68,7 @@
 .subtexto {
   color: var(--color-texto);
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  line-height: 1.5;
   font-weight: 500;
 }
 
@@ -69,6 +78,7 @@
   background: var(--color-borde);
   border-radius: 4px;
   overflow: hidden;
+  margin-top: 1.5rem;
 }
 
 .kpiFill {
@@ -90,6 +100,7 @@
   font-size: 2.2rem;
   margin-bottom: 3rem;
   color: var(--color-texto);
+  font-weight: 600;
 }
 
 .testimonioGrid {
@@ -100,7 +111,7 @@
 
 .testimonio {
   position: relative;
-  padding: 2rem;
+  padding: 2.5rem 2rem;
   background: var(--color-fondo);
   border-radius: 10px;
   border: 1px solid var(--color-borde);
@@ -111,6 +122,7 @@
   color: var(--color-acento);
   line-height: 1;
   margin-bottom: 1rem;
+  font-family: serif;
 }
 
 .testimonio p {
@@ -118,6 +130,7 @@
   line-height: 1.6;
   margin-bottom: 1.5rem;
   font-style: italic;
+  font-size: 1.1rem;
 }
 
 .cliente {
@@ -129,6 +142,7 @@
   display: block;
   color: var(--color-texto);
   margin-bottom: 0.3rem;
+  font-weight: 600;
 }
 
 .cliente span {
@@ -136,12 +150,23 @@
   font-size: 0.9rem;
 }
 
-/* ========== RESPONSIVIDAD RESULTADOS ========== */
+/* ========== RESPONSIVIDAD FINANCIALS ========== */
 
-/* Tablets */
+@media screen and (max-width: 1024px) {
+  .kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .testimonioGrid {
+    gap: 2rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .resultados {
-    padding: 4rem 0;
+    padding: 5rem 0;
+    min-height: auto;
+    display: block;
   }
   
   .titulo {
@@ -181,56 +206,32 @@
   }
   
   .testimonio {
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
   }
 }
 
-/* Móviles */
 @media screen and (max-width: 480px) {
-  .kpi {
-    padding: 2rem 1rem;
+  .resultados {
+    padding: 4rem 0;
+  }
+  
+  .titulo {
+    font-size: 1.8rem;
   }
   
   .numero {
     font-size: 3rem;
   }
   
-  .subtexto {
-    font-size: 1.1rem;
+  .testimonios {
+    padding: 2.5rem 1rem;
+  }
+  
+  .testimonio {
+    padding: 1.5rem 1rem;
   }
   
   .quote {
     font-size: 3rem;
-  }
-}
-
-/* Móviles muy pequeños */
-@media screen and (max-width: 320px) {
-  .resultados {
-    padding: 3rem 0;
-  }
-  
-  .titulo {
-    font-size: 2rem;
-  }
-  
-  .kpi {
-    padding: 1.5rem 1rem;
-  }
-  
-  .numero {
-    font-size: 2.5rem;
-  }
-  
-  .testimonios {
-    padding: 2rem 1rem;
-  }
-  
-  .testimonio {
-    padding: 1rem;
-  }
-  
-  .testimonio p {
-    font-size: 0.9rem;
   }
 }

@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import About from './components/About/About'
@@ -11,30 +11,21 @@ import Footer from './components/Footer/Footer'
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <main>
-        <section id="inicio">
+    <Router>
+      <div className="App">
+        <Navbar />
+
+        <main>
           <Hero />
-        </section>
-        <section id="nosotros">
           <About />
-        </section>
-        <section id="problema">
           <Problem />
-        </section>
-        <section id="solucion">
           <Solution />
-        </section>
-        <section id="viabilidad">
           <Opportunity />
-        </section>
-        <Financials />
-        <section id="contacto">
+          <Financials />
           <Footer />
-        </section>
-      </main>
-    </div>
+        </main>
+      </div>
+    </Router>
   )
 }
 

@@ -1,45 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styles from './Navbar.module.css'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState('inicio')
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-      
-      // Detectar sección activa con mejor precisión
-      const sections = ['inicio', 'nosotros', 'problema', 'solucion', 'viabilidad', 'contacto']
-      const current = sections.find(section => {
-        const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
-        }
-        return false
-      })
-      
-      if (current) setActiveSection(current)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
-
-  const closeMenu = () => {
-    setIsMenuOpen(false)
-  }
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      const offset = 80 // Altura del navbar
+      const offset = 90
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
       const offsetPosition = elementPosition - offset
 
@@ -48,51 +16,29 @@ const Navbar = () => {
         behavior: 'smooth'
       })
     }
-    closeMenu()
+    setIsMenuOpen(false)
   }
 
   return (
-    <nav id="navbar" className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
+    <nav className={styles.navbar}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <a 
-            href="#inicio" 
-            onClick={(e) => { 
-              e.preventDefault(); 
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-          >
+          <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('inicio') }}>
             ECO DRONE
           </a>
         </div>
         
         <ul className={`${styles.navLinks} ${isMenuOpen ? styles.navActive : ''}`}>
-          {[
-            { id: 'nosotros', label: 'Nosotros' },
-            { id: 'problema', label: 'Ventajas' },
-            { id: 'solucion', label: 'Servicios' },
-            { id: 'viabilidad', label: 'Resultados' },
-            { id: 'contacto', label: 'Contacto' }
-          ].map(item => (
-            <li key={item.id}>
-              <a 
-                href={`#${item.id}`}
-                className={activeSection === item.id ? styles.active : ''}
-                onClick={(e) => { 
-                  e.preventDefault(); 
-                  scrollToSection(item.id);
-                }}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
+          <li><a onClick={(e) => { e.preventDefault(); scrollToSection('inicio') }}>Inicio</a></li>
+          <li><a onClick={(e) => { e.preventDefault(); scrollToSection('nosotros') }}>Nosotros</a></li>
+          <li><a onClick={(e) => { e.preventDefault(); scrollToSection('problema') }}>Ventajas</a></li>
+          <li><a onClick={(e) => { e.preventDefault(); scrollToSection('solucion') }}>Servicios</a></li>
+          <li><a onClick={(e) => { e.preventDefault(); scrollToSection('viabilidad') }}>Resultados</a></li>
+          <li><a onClick={(e) => { e.preventDefault(); scrollToSection('contacto') }}>Contacto</a></li>
         </ul>
 
-        <div 
-          className={`${styles.hamburger} ${isMenuOpen ? styles.toggle : ''}`}
-          onClick={toggleMenu}
-        >
+        <div className={`${styles.hamburger} ${isMenuOpen ? styles.toggle : ''}`}
+             onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <span className={styles.bar}></span>
           <span className={styles.bar}></span>
           <span className={styles.bar}></span>

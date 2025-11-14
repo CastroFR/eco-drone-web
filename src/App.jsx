@@ -1,5 +1,4 @@
 import React from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import About from './components/About/About'
@@ -11,21 +10,18 @@ import Footer from './components/Footer/Footer'
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-
-        <main>
-          <Hero />
-          <About />
-          <Problem />
-          <Solution />
-          <Opportunity />
-          <Financials />
-          <Footer />
-        </main>
+    <div className="App">
+      <Navbar />
+      <div style={{ paddingTop: '80px' }}>
+        <Hero />
+        <About />
+        <Problem />
+        <Solution />
+        <Opportunity />
+        <Financials />
+        <Footer />
       </div>
-    </Router>
+    </div>
   )
 }
 

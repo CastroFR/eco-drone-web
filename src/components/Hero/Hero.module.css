@@ -5,14 +5,13 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+  background: linear-gradient(rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.596)), 
               url('../../assets/hero-bg.jpg') center/cover no-repeat;
   text-align: center;
   padding: 0 1.5rem;
   overflow: hidden;
   min-height: 600px;
   margin: 0;
-  padding-top: 80px;
   box-sizing: border-box;
 }
 

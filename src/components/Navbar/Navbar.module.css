@@ -3,14 +3,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px; /* Altura consistente de 80px */
-  padding: 1rem 0;
-  background: #121212; /* Fondo sólido siempre */
-  border-bottom: 1px solid #333333;
-  z-index: 2000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  height: 80px;
+  background-color: var(--color-fondo);
+  border-bottom: 1px solid var(--color-borde);
+  z-index: 1000;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
 }
 
 .container {
@@ -26,7 +26,7 @@
 .logo a {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #39FF14;
+  color: var(--color-acento);
   text-decoration: none;
 }
 
@@ -37,16 +37,15 @@
 }
 
 .navLinks a {
-  color: #FFFFFF;
+  color: var(--color-texto);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
   cursor: pointer;
 }
 
-.navLinks a:hover,
-.navLinks a.active {
-  color: #39FF14;
+.navLinks a:hover {
+  color: var(--color-acento);
 }
 
 .hamburger {
@@ -58,7 +57,7 @@
 .bar {
   width: 25px;
   height: 3px;
-  background: #FFFFFF;
+  background: var(--color-texto);
   margin: 3px 0;
   transition: 0.3s;
 }
@@ -71,11 +70,11 @@
 
   .navLinks {
     position: fixed;
-    top: 80px; /* Ajustado a 80px para coincidir con la altura de la navbar */
+    top: 80px;
     right: -100%;
     width: 100%;
     height: calc(100vh - 80px);
-    background: #121212;
+    background: var(--color-fondo);
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -86,9 +85,5 @@
 
   .navActive {
     right: 0;
-  }
-
-  .bar.active {
-    background-color: #39FF14;
   }
 }
